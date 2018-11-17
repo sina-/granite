@@ -1,9 +1,8 @@
 #include <fmod.hpp>
 
-#include <oni-core/audio/audio-manager-fmod.h>
-#include <oni-core/utils/oni-assert.h>
-#include <oni-core/common/consts.h>
-#include <oni-core/common/defines.h>
+#include <oni-audio/audio-manager-fmod.h>
+#include <oni-common/consts.h>
+#include <oni-common/defines.h>
 
 #define ERRCHECK(_result) ONI_DEBUG_ASSERT((_result) == FMOD_OK)
 

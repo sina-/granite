@@ -30,9 +30,16 @@ namespace oni {
             }
 
             unbind();
-
         }
 
         Buffer::~Buffer() { glDeleteBuffers(1, &mBufferID); }
+
+        void Buffer::bind() { glBindBuffer(GL_ARRAY_BUFFER, mBufferID); }
+
+        void Buffer::unbind() { glBindBuffer(GL_ARRAY_BUFFER, 0); }
+
+        const common::BufferStructures &Buffer::getBufferStructure() const {
+            return mBufferStructures;
+        }
     }
 }

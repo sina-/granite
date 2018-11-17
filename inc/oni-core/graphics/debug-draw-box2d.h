@@ -25,8 +25,6 @@ namespace oni {
 
             void DrawTransform(const b2Transform &xf) override;
 
-            void DrawPoint(const b2Vec2 &p, float32 size, const b2Color &color) override;
-
             void End();
 
             void Begin();
