@@ -28,5 +28,4 @@ target_link_libraries(oni-server-game
 
 add_dependencies(oni-server-game
         oni-core-network
-        oni-core-graphics
         )

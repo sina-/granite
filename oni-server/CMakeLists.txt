@@ -37,13 +37,11 @@ target_compile_features(oni-server
 
 target_link_libraries(oni-server
         PRIVATE
-            oni-core-graphics
             oni-server-game
             oni-core-network
         )
 
 add_dependencies(oni-server
         oni-server-game
-        oni-core-graphics
         oni-core-network
         )

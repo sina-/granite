@@ -7,7 +7,7 @@ target_compile_features(oni-core-audio
 
 target_include_directories(oni-core-audio
         PUBLIC
-            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/inc/oni>
+            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/inc>
         PRIVATE
             ${oni_SOURCE_DIR}/lib/fmod/inc
         )
