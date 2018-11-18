@@ -35,19 +35,20 @@ find_package(OpenGL REQUIRED)
 find_package(X11 REQUIRED)
 
 target_link_libraries(oni-core-graphics
-        PRIVATE
-            # Not sure why this is needed, but bunch of GLFW linking fails without it
-            # ${CMAKE_DL_LIBS}
-            # ${X11_LIBRARY}
         PUBLIC
             ${GLFW_LIBRARY}
             ${GLEW_LIBRARY}
         PRIVATE
+            # Not sure why this is needed, but bunch of GLFW linking fails without it
+            ${CMAKE_DL_LIBS}
+            ${X11_LIBRARIES}
             ${FREEIMAGE_LIBRARY}
             ${FREETYPE_GL}
             # NOTE: FreeType must be linked after freetype-gl because fucking g++
             ${FREETYPE_LIBRARY}
             ${OPENGL_LIBRARY}
+            # NOTE: For some reason when building glfw from source these are not linked into the binary...
+            Xinerama Xrandr Xcursor Xxf86vm
             ${ANT_TWEAK_BAR}
             oni-core-buffers
             oni-core-io
