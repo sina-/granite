@@ -30,6 +30,10 @@ find_library(FREEIMAGE_LIBRARY freeimage PATHS ${oni_SOURCE_DIR}/lib/freeimage)
 find_library(GLFW_LIBRARY glfw3 PATHS ${oni_SOURCE_DIR}/lib/glfw/bin/x64/linux)
 find_library(GLEW_LIBRARY GLEW PATHS ${oni_SOURCE_DIR}/lib/glew/lib)
 
+set(OpenGL_GL_PREFERENCE "GLVND")
+find_package(OpenGL REQUIRED)
+# find_package(X11 REQUIRED)
+
 # Note: without this line, linker will complain about missing function implementations
 target_link_libraries(oni-core-graphics
         PUBLIC
@@ -43,7 +47,7 @@ target_link_libraries(oni-core-graphics
             ${FREETYPE_GL}
             # NOTE: FreeType must be linked after freetype-gl because fucking g++
             ${FREETYPE_LIBRARY}
-            #${OPENGL_LIBRARY}
+            ${OPENGL_LIBRARY}
             ${ANT_TWEAK_BAR}
             oni-core-buffers
             oni-core-io

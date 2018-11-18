@@ -21,9 +21,9 @@ subdirs(${oni-server_SOURCE_DIR}/src)
 
 target_include_directories(oni-server
         PRIVATE
-            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/inc>
             $<BUILD_INTERFACE:${oni-server_SOURCE_DIR}/inc>
 
+            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/inc>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/enet/include>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/cereal>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/box2d/Box2D>
