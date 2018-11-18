@@ -8,18 +8,19 @@ target_compile_features(oni-core-network
 target_include_directories(oni-core-network
         PUBLIC
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/inc>
-        PRIVATE SYSTEM
-            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/cereal>
-            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/entt>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/enet/include>
+            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/cereal>
+        PRIVATE SYSTEM
+            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/entt>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/box2d/Box2D>
         )
 
 find_library(ENET_LIBRARY enet PATHS ${oni_SOURCE_DIR}/lib/enet/build)
 
 target_link_libraries(oni-core-network
-        PRIVATE
+        PUBLIC
             ${ENET_LIBRARY}
+        PRIVATE
             oni-core-entities
         )
 

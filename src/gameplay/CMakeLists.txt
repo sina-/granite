@@ -13,4 +13,5 @@ target_include_directories(oni-core-gameplay
 target_link_libraries(oni-core-gameplay
         PRIVATE
             oni-core-math
+            oni-core-entities
 )

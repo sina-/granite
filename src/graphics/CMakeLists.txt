@@ -6,20 +6,20 @@ target_compile_features(oni-core-graphics
         )
 
 target_compile_definitions(oni-core-graphics
-        PRIVATE
+        PUBLIC
             GLEW_NO_GLU
         )
 
 target_include_directories(oni-core-graphics
         PUBLIC
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/inc>
+            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/glfw/include>
+            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/glew/include>
         PRIVATE SYSTEM
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/freetype-gl/include>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/freeimage/Source>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/freetype2/include>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/ant-tweak-bar/include>
-            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/glfw/include>
-            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/glew/include>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/box2d/Box2D>
         )
 
@@ -32,12 +32,13 @@ find_library(GLEW_LIBRARY GLEW PATHS ${oni_SOURCE_DIR}/lib/glew/lib)
 
 # Note: without this line, linker will complain about missing function implementations
 target_link_libraries(oni-core-graphics
+        PUBLIC
+            ${GLFW_LIBRARY}
+            ${GLEW_LIBRARY}
         PRIVATE
             # Not sure why this is needed, but bunch of GLFW linking fails without it
             #${CMAKE_DL_LIBS}
             #${X11_LIBRARY}
-            ${GLFW_LIBRARY}
-            ${GLEW_LIBRARY}
             ${FREEIMAGE_LIBRARY}
             ${FREETYPE_GL}
             # NOTE: FreeType must be linked after freetype-gl because fucking g++
