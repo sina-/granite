@@ -27,7 +27,7 @@ find_library(ANT_TWEAK_BAR AntTweakBar PATHS ${oni_SOURCE_DIR}/lib/ant-tweak-bar
 find_library(FREETYPE_GL freetype-gl PATHS ${oni_SOURCE_DIR}/lib/freetype-gl/bin)
 find_library(FREETYPE_LIBRARY freetype PATHS ${oni_SOURCE_DIR}/lib/freetype2/builds)
 find_library(FREEIMAGE_LIBRARY freeimage PATHS ${oni_SOURCE_DIR}/lib/freeimage)
-find_library(GLFW_LIBRARY glfw3 PATHS ${oni_SOURCE_DIR}/lib/glfw/bin/x64/linux)
+find_library(GLFW_LIBRARY glfw3 PATHS ${oni_SOURCE_DIR}/lib/glfw/build/src)
 find_library(GLEW_LIBRARY GLEW PATHS ${oni_SOURCE_DIR}/lib/glew/lib)
 
 set(OpenGL_GL_PREFERENCE "GLVND")
