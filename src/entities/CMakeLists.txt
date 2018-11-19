@@ -11,7 +11,7 @@ target_include_directories(oni-core-entities
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/entt>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/cereal>
         PRIVATE
-            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/box2d/Box2D>
+            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/box2d>
         )
 
 target_link_libraries(oni-core-entities

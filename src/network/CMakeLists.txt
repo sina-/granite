@@ -12,7 +12,7 @@ target_include_directories(oni-core-network
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/cereal>
         PRIVATE SYSTEM
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/entt>
-            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/box2d/Box2D>
+            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/box2d>
         )
 
 find_library(ENET_LIBRARY enet PATHS ${oni_SOURCE_DIR}/lib/enet/build)

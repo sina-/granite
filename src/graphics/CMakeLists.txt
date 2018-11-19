@@ -20,7 +20,7 @@ target_include_directories(oni-core-graphics
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/freeimage/Source>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/freetype2/include>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/ant-tweak-bar/include>
-            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/box2d/Box2D>
+            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/box2d>
         )
 
 find_library(ANT_TWEAK_BAR AntTweakBar PATHS ${oni_SOURCE_DIR}/lib/ant-tweak-bar/bin)

@@ -15,3 +15,7 @@ target_link_libraries(oni-core-gameplay
             oni-core-math
             oni-core-entities
 )
+
+add_dependencies(oni-core-gameplay
+        oni-core-entities
+        )

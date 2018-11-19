@@ -11,10 +11,10 @@ target_include_directories(oni-core-physics
         PRIVATE SYSTEM
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/cereal>
             $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/entt>
-            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/box2d/Box2D>
+            $<BUILD_INTERFACE:${oni_SOURCE_DIR}/lib/box2d>
         )
 
-find_library(BOX2D_LIBRARY Box2D PATHS ${oni_SOURCE_DIR}/lib/box2d/Box2D/Build/Box2D)
+find_library(BOX2D_LIBRARY Box2D PATHS ${oni_SOURCE_DIR}/lib/box2d/Build/bin/x86_64/Debug)
 
 target_link_libraries(oni-core-physics
         PRIVATE
